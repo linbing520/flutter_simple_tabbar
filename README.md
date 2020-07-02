@@ -4,12 +4,12 @@ simple tabbar without TabController, just one widget
 支持监听页面切换，支持切换tab位置
 使用方法：<br/>
 
-        ValueNotifier selectIndex = new ValueNotifier(2);
-        this.selectIndex.value = 0; //切换tab，直接设置ValueNotifier的值
+        ValueNotifier changeIndex = new ValueNotifier(2);
+        this.changeIndex.value = 0; //切换tab，直接设置ValueNotifier的值
         
         SimpleTabBar(
          tabs: tabs,
-         selectIndex:selectIndex, //如果需要代码切换tab，可以使用这个属性
+         changeIndex:changeIndex, //如果需要代码切换tab，可以使用这个属性
          onTabChange:(index) {
            print('onTabChange');
            print(index);
