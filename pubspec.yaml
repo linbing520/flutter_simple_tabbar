@@ -1,6 +1,6 @@
 name: flutter_simple_tabbar
 description: simple tabbar without TabController, just one widget
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/linbing520/flutter_simple_tabbar
 
 # The following line prevents the package from being accidentally published to

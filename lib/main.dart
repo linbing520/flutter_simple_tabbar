@@ -24,7 +24,7 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> {
 
-  ValueNotifier selectIndex = new ValueNotifier(2);
+  ValueNotifier changeIndex = new ValueNotifier(2);
 
   var tabs = <Tab>[
     Tab(text: "Tab1",),
@@ -47,7 +47,7 @@ class MyHomePageState extends State<MyHomePage> {
 
   void changeSelectIndex() {
     Future.delayed(Duration(seconds: 3)).then((value) {
-        this.selectIndex.value = 0;
+        this.changeIndex.value = 0;
     });
   }
 
@@ -55,7 +55,7 @@ class MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) => Scaffold(
         body:SimpleTabBar(
          tabs: tabs,
-         selectIndex:selectIndex,
+          changeIndex:changeIndex,
          onTabChange:(index) {
            print('onTabChange');
            print(index);

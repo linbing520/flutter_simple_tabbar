@@ -11,7 +11,7 @@ class SimpleTabBar extends StatefulWidget {
 
   final List<Widget> tabs; //tab
   final List<Widget> tabContents; //内容页
-  final ValueNotifier selectIndex; //设置选中的索引,默认0
+  final ValueNotifier changeIndex; //设置选中的索引,默认0
   final OnTabChange onTabChange;
 
 
@@ -131,7 +131,7 @@ class SimpleTabBar extends StatefulWidget {
       {Key key,
         this.tabs,
         this.tabContents,
-        this.selectIndex,
+        this.changeIndex,
         this.isScrollable = false,
         this.indicatorColor  = const Color(0Xffcccccc),
         this.indicatorWeight = 2.0,
@@ -170,11 +170,11 @@ class SimpleTabBarState extends State<SimpleTabBar> with SingleTickerProviderSta
       tabLength = widget.tabs.length;
     }
     tabController = TabController(length: tabLength, vsync: this);
-    if(widget.selectIndex != null) {
-      widget.selectIndex.addListener(() {
-        tabController.index = widget.selectIndex.value;
+    if(widget.changeIndex != null) {
+      widget.changeIndex.addListener(() {
+        tabController.index = widget.changeIndex.value;
       });
-      tabController.index = widget.selectIndex.value;
+      tabController.index = widget.changeIndex.value;
     }
     lastIndex = tabController.index;
     if(widget.onTabChange != null) {
