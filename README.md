@@ -9,7 +9,7 @@ simple tabbar without TabController, just one widget
         
         SimpleTabBar(
          tabs: tabs,
-         selectIndex:selectIndex,
+         selectIndex:selectIndex, //如果需要代码切换tab，可以使用这个属性
          onTabChange:(index) {
            print('onTabChange');
            print(index);
